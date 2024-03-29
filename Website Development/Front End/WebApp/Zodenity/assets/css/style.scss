@@ -1,0 +1,117 @@
+:root{
+    --gradient-azurehorizon: linear-gradient(45deg,  #16D9E3, #30C7EC, #46AEF7);
+    --gradient-mysticdreams: linear-gradient(45deg, #2B86C5, #784BA0, #FF3CAC);
+    --gradient-fuchsia: linear-gradient(45deg, #EA3883, #ABDAFB, #1E2AE6);
+    --gradient-skyline: linear-gradient(45deg,  #3CA8E8, #2931B3);
+    --gradient-ultraviolet: linear-gradient(-45deg, #800e92, #1892A2, #386AC0, #800e92);
+    --color-white: #FFFFFF;
+    --color-inactive: #888888;
+    --color-primary: #0D0D2D;
+    --color-secondary: #1EE0E1;
+    --color-accent: linear-gradient(45deg, #DF1CFF, #EA0070);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    min-height: 100vh;
+    // background: var(--gradient-azurehorizon) no-repeat;
+    // background: var(--gradient-mysticdreams) no-repeat;
+    // background: var(--gradient-fuchsia) no-repeat;
+    // background: var(--gradient-skyline) no-repeat;
+    // background: var(--gradient-ultraviolet) no-repeat;
+    background: #0D0D2D;
+}
+
+body.darktheme{
+    color: var(--color-white);
+
+    a{
+        color: var(--color-white);
+    }
+
+    button{
+        color: var(--color-white);
+    }
+
+}
+
+header{
+
+    nav{
+        padding: 0.5rem 0.5rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .brand{
+            background: var(--color-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            
+            h4{
+                
+                a{
+                    color: transparent;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+        
+        .nav-list{
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+
+            .nav-list-item{
+                list-style: none;
+
+                .nav-link{
+                    color: var(--color-inactive);
+                    text-decoration: none;
+                    transition: 0.3s;
+                }
+
+                .nav-link:hover{
+                    color: var(--color-white)
+                }
+
+                .nav-link.active{
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        .cta{
+
+            .cta-button{
+                background: #DF1CFF;
+                padding: 0.375rem 0.75rem;
+                border: 0;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .cta-button:hover{
+                background: #EA0070;
+            }
+
+        }
+
+    }
+
+}

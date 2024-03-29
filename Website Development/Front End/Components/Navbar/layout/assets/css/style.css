@@ -1,0 +1,34 @@
+:root {
+  --bg-color-dark: #131110;
+  --bg-color-light: #FFF;
+  --navbar-background: #FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color-dark);
+}
+
+header nav {
+  background: var(--navbar-background);
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+header nav .nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+header nav .nav-list .nav-list-item {
+  margin: 0 15px;
+}/*# sourceMappingURL=style.css.map */
