@@ -1,0 +1,43 @@
+button{
+    color: var(--color-neutral-100);
+    background: var(--color-accent-400);
+    padding: 1em 2.5em;
+    border: 0;
+    border-radius: 100vmax;
+    box-shadow: 0 1em 1em -1em var(--color-accent-500);
+    font-weight: var( --font-weight-bold);
+    font-size: var( --font-size-button);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover, .button:focus-visible{
+    background: var(--color-accent-300);
+}
+
+.container{
+    --max-width: 1080px;
+    --padding: 1rem;
+
+    width: min( var(--max-width), 100% - ( var(--padding) *2 ) );
+    margin-inline: auto;
+}
+
+.even-column-container{
+    display: grid;
+    gap: 1rem;
+}
+
+.card{
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+
+@media (min-width: 50em) {
+    .even-column{
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
