@@ -413,7 +413,18 @@ main section#hero .hero-image {
   align-items: center;
 }
 main section#feature .section-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+main section#feature .section-body .card {
+  color: var(--color-neutral-900);
+  height: 100px;
+  padding: 2em;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 main section#service .section-body .role {
   display: grid;

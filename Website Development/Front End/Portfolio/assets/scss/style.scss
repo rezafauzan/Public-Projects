@@ -225,7 +225,16 @@ main {
 
     section#feature {
         .section-body {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+
+            .card{
+                color: var(--color-neutral-900);
+                height: 100px;
+                padding: 2em;
+                @include d-flex(center, center, row)
+            }
         }
     }
 
