@@ -1,5 +1,6 @@
 /* Service Section */
-const service_container = document.getElementById('service-container')
+const service_section = document.querySelector('#service .container .section-body')
+
 const as_frontend = document.getElementById('as-frontend')
 
 frontend_services = [
@@ -15,6 +16,16 @@ backend_services = [
 ]
 
 as_frontend.addEventListener('click', () => {
+    if(document.getElementById('service-container')){
+        service_section.removeChild(document.getElementById('service-container'))
+    }
+
+    let service_container = document.createElement('div')
+    service_container.classList.add('service-container')
+    service_container.id = 'service-container'
+
+    service_section.append(service_container)
+
     service_container.innerHTML = `
         <h3>Service As Front-End</h3>
             
@@ -67,6 +78,16 @@ as_frontend.addEventListener('click', () => {
 
 const as_backend = document.getElementById('as-backend')
 as_backend.addEventListener('click', () => {
+    if(document.getElementById('service-container')){
+        service_section.removeChild(document.getElementById('service-container'))
+    }
+
+    let service_container = document.createElement('div')
+    service_container.classList.add('service-container')
+    service_container.id = 'service-container'
+
+    service_section.append(service_container)
+
     service_container.innerHTML = `
         <h3>Service As Back-End</h3>
             
