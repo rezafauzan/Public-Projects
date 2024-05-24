@@ -12,7 +12,10 @@ frontend_services = [
 ]
 
 backend_services = [
-    { 'title': `Coming soon`, 'description': `Coming soon`}
+    { 'title': `Website business logic design`, 'description': `do you want to have a website with functionally workflow?`},
+    { 'title': `Database scheme design`, 'description': `allready has business logic but don't know how to implement it to database scheme`},
+    { 'title': `Database integration`, 'description': `do you want to add database to your website so your website can store data and interact with it?`},
+    { 'title': `Add new functional feature`, 'description': `Something like add payment gateway, or maybe adding authorization sign up sign in, data management, data procesing, etc`}
 ]
 
 as_frontend.addEventListener('click', () => {
@@ -99,6 +102,8 @@ as_backend.addEventListener('click', () => {
             <img src="" alt="Node JS" />
             <img src="" alt="Springboot" />
             <img src="" alt="Quarkus" />
+            <img src="" alt="My SQL" />
+            <img src="" alt="Postgres" />
         </div>
     `
 

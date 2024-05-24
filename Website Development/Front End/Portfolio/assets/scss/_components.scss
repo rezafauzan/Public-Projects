@@ -23,21 +23,9 @@ button{
     margin-inline: auto;
 }
 
-.even-column-container{
-    display: grid;
-    gap: 1rem;
-}
-
 .card{
     background-color: #ffffff;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     word-wrap: break-word;
-}
-
-@media (min-width: 50em) {
-    .even-column{
-        grid-auto-flow: column;
-        grid-auto-columns: 1fr;
-    }
 }
