@@ -1,14 +1,48 @@
 :root {
     /* Theme */
-    --color-primary-400: #000000;
-    --color-accent-100: #000000;
-    --color-accent-400: #000000;
-    --color-neutral-100: #FFFFFF;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    
+    --color-primary-200: #000000;
+    --color-primary-450: rgba(4, 1, 28);
+    --color-primary-900: #000000;
+    --color-accent-200: #2e8e41;
+    --color-accent-450: #45a049;
+    --color-accent-900: rgb(0, 244, 144);
+    --color-neutral-200: var(--color-white);
     --color-neutral-450: #4D4D4D;
-    --color-neutral-900: rgb(4, 1, 28);
+    --color-neutral-900: var(--color-black);
 
-    --color-white: var(--color-neutral-100);
-    --color-black: var(--color-neutral-900);
+    --background-neutral-200: var(--color-neutral-200);
+    --background-neutral-450: var(--color-neutral-450);
+    --background-neutral-900: var(--color-neutral-900);
+
+    --background-primary-200: var(--color-primary-200);
+    --background-primary-450: var(--color-primary-450);
+    --background-primary-900: var(--color-primary-900);
+    
+    --background-accent-200: var(--color-accent-200);
+    --background-accent-450: var(--color-accent-450);
+    --background-accent-900: var(--color-accent-900);
+
+    --body-background: snow;
+    --body-dark-background: var(--background-neutral-900);
+    --cta-background: var(--background-accent-900);
+    --cta-hover-background: var(--background-accent-450);
+    --cta-active-background: var(--background-accent-200);
+    --nav-background: var(--background-primary-450);
+    --nav-scrolled-background: var(--nav-background);
+
+    --text-primary-100: var(--color-neutral-200);
+    --text-primary-450: var(--color-neutral-450);
+    --text-primary-900: var(--color-neutral-900);
+    
+    --text-link-200: var(--color-accent-200);
+    --text-link-450: var(--color-accent-450);
+    --text-link-900: var(--color-accent-900);
+
+    --cta-text-primary-100: var(--color-neutral-200);
+    --cta-text-primary-900: var(--color-neutral-900);
 
     /* Font & Typography */
     --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -36,8 +70,17 @@
     --font-size-button: var(--font-size-200);
 
     /* Layout */    
-    $grid-columns: 12;
-    $grid-gutter-width: 16px;
-    $container-max-width: 1200px;
+    --grid-columns: 12;
+    --grid-gutter-width: 16px;
+    --container-max-width: 1920px;
 
+}
+
+@media (min-width: 50rem) {
+    :root {
+        --font-size-body: var(--font-size-500);
+        --font-size-nav: var(--font-size-400);
+        --font-size-primary-heading: var(--font-size-800);
+        --font-size-secondary-heading: var(--font-size-700);
+    }
 }

@@ -16,7 +16,7 @@ button{
 }
 
 .container{
-    --max-width: 1080px;
+    --max-width: var(--container-max-width);
     --padding: 1rem;
 
     width: min( var(--max-width), 100% - ( var(--padding) *2 ) );

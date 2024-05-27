@@ -9,11 +9,33 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-    <!-- <div class="ornament">
+<body class="dark-theme">
+
+    <div class="ornament">
         <div class="blue-circle-light"></div>
-    </div> -->
+    </div>
+
     <header>
+
+        <div class="utility">
+
+            <div class="clock">
+                <span>My country local time ⌚</span>
+                <span id="clock-hour">00</span>
+                <span>:</span>
+                <span id="clock-minute">00</span>
+                <span>:</span>
+                <span id="clock-second">00</span>
+                <span id="clock-AMPM">AM</span>
+            </div>
+
+            <div class="theme-toggler">
+                <input type="checkbox" id="theme-toggler">
+                <input type="range" class="dark" id="theme-slider" max="1" disabled>
+            </div>
+
+        </div>
+
         <nav>
 
             <div class="brand">
@@ -39,6 +61,7 @@
             </div>
 
         </nav>
+
     </header>
 
     <main>
@@ -46,13 +69,14 @@
         <section class="hero" id="hero">
             <div class="container">
                 <div class="copytext">
-                    <span class="hero-intro">Good Morning,</span>
-                    <h2 class="hero-headline">Transforming Ideas into Stunning Websites.</h2>
+                    <!-- <span class="hero-intro">Good Morning,</span> -->
+                    <h2 class="hero-headline">
+                        Transform your ideas into fancy secure and high performance Websites
+                    </h2>
                     <!-- <h2 class="hero-sub-headline">Transforming Ideas into Stunning Websites.</h2> -->
                     <span class="hero-description">
-                        I turn your design into a custom high-performing websites. With a focus on design
-                        and functionality, I create digital experiences that engage, inspire, and set you
-                        apart.
+                        turn your design into a custom high-performing websites. With a focus on design
+                        and functionality
                     </span>
                     <div class="cta">
                         <a href="#" class="cta-button">Call To Action</a>
@@ -61,7 +85,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="assets/img/2.png" alt="Hero image">
+                    <img src="assets/img/.png" alt="Hero image">
                 </div>
 
                 <!--
@@ -78,16 +102,42 @@
             </div>
         </section>
 
-        <!-- <section class="about" id="about">
+        <section class="about" id="about">
             <div class="container">
+
                 <div class="section-heading">
-                    
+                    <h2>Let me introduce myself</h2>
                 </div>
+
                 <div class="section-body">
 
+                    <div class="me">
+
+                        <h3>Hi my name is Reza i am a tech enthusiast</h3>
+                        <p>i will help you to Transform your ideas into fancy secure and high performance Websites as
+                            posible</p>
+                        <p>turn your design into a custom high-performing websites. With a focus on design
+                            and functionality
+                            <!-- I create digital experiences that engage, inspire, and set you
+                            apart.-->
+                        </p>
+
+                        <div class="cta">
+                            <p>More about me on my <a href="#resume" class="cta-button">resume here ></a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="picture-of-me">
+                        <div class="picture-border">
+                            <img src="assets/img/me/profile.jpg" alt="My portrait">
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
-        </section> -->
+        </section>
 
         <section class="feature" id="feature">
             <div class="container">
@@ -399,8 +449,8 @@
 
         </nav>
     </footer>
-
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/utility.js"></script>
     <script src="assets/js/populate-service.js"></script>
 
 </body>
