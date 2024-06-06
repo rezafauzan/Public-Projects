@@ -3,12 +3,12 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     
-    --color-primary-200: #000000;
+    --color-primary-200: snow;
     --color-primary-450: rgba(4, 1, 28);
     --color-primary-900: #000000;
-    --color-accent-200: #2e8e41;
-    --color-accent-450: #45a049;
-    --color-accent-900: rgb(0, 244, 144);
+    --color-accent-200: #28A4DF;
+    --color-accent-450: #0F98D8;
+    --color-accent-900: #0F88D8;
     --color-neutral-200: var(--color-white);
     --color-neutral-450: #4D4D4D;
     --color-neutral-900: var(--color-black);
@@ -25,14 +25,6 @@
     --background-accent-450: var(--color-accent-450);
     --background-accent-900: var(--color-accent-900);
 
-    --body-background: snow;
-    --body-dark-background: var(--background-neutral-900);
-    --cta-background: var(--background-accent-900);
-    --cta-hover-background: var(--background-accent-450);
-    --cta-active-background: var(--background-accent-200);
-    --nav-background: var(--background-primary-450);
-    --nav-scrolled-background: var(--nav-background);
-
     --text-primary-100: var(--color-neutral-200);
     --text-primary-450: var(--color-neutral-450);
     --text-primary-900: var(--color-neutral-900);
@@ -41,8 +33,17 @@
     --text-link-450: var(--color-accent-450);
     --text-link-900: var(--color-accent-900);
 
-    --cta-text-primary-100: var(--color-neutral-200);
-    --cta-text-primary-900: var(--color-neutral-900);
+    --cta-text-primary-200: var(--color-neutral-200);
+    --cta-text-primary-450: var(--color-accent-450);
+    --cta-text-primary-900: var(--color-accent-900);
+
+    --body-background: snow;
+    --body-dark-background: var(--background-neutral-900);
+    --cta-background: var(--background-accent-200);
+    --cta-hover-background: var(--background-accent-450);
+    --cta-active-background: var(--background-accent-900);
+    --nav-background: transparent;
+    --nav-scrolled-background: var(--nav-background);
 
     /* Font & Typography */
     --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -58,7 +59,7 @@
 
     --font-size-200: 0.8125rem;
     --font-size-400: 0.875rem;
-    --font-size-500: 1rem;
+    --font-size-450: 1rem;
     --font-size-600: 1.875rem;
     --font-size-700: 2.5rem;
     --font-size-800: 3.5rem;

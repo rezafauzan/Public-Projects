@@ -4,12 +4,12 @@
   /* Theme */
   --color-white: #FFFFFF;
   --color-black: #000000;
-  --color-primary-200: #000000;
+  --color-primary-200: snow;
   --color-primary-450: rgba(4, 1, 28);
   --color-primary-900: #000000;
-  --color-accent-200: #2e8e41;
-  --color-accent-450: #45a049;
-  --color-accent-900: rgb(0, 244, 144);
+  --color-accent-200: #28A4DF;
+  --color-accent-450: #0F98D8;
+  --color-accent-900: #0F88D8;
   --color-neutral-200: var(--color-white);
   --color-neutral-450: #4D4D4D;
   --color-neutral-900: var(--color-black);
@@ -22,21 +22,22 @@
   --background-accent-200: var(--color-accent-200);
   --background-accent-450: var(--color-accent-450);
   --background-accent-900: var(--color-accent-900);
-  --body-background: snow;
-  --body-dark-background: var(--background-neutral-900);
-  --cta-background: var(--background-accent-900);
-  --cta-hover-background: var(--background-accent-450);
-  --cta-active-background: var(--background-accent-200);
-  --nav-background: var(--background-primary-450);
-  --nav-scrolled-background: var(--nav-background);
   --text-primary-100: var(--color-neutral-200);
   --text-primary-450: var(--color-neutral-450);
   --text-primary-900: var(--color-neutral-900);
   --text-link-200: var(--color-accent-200);
   --text-link-450: var(--color-accent-450);
   --text-link-900: var(--color-accent-900);
-  --cta-text-primary-100: var(--color-neutral-200);
-  --cta-text-primary-900: var(--color-neutral-900);
+  --cta-text-primary-200: var(--color-neutral-200);
+  --cta-text-primary-450: var(--color-accent-450);
+  --cta-text-primary-900: var(--color-accent-900);
+  --body-background: snow;
+  --body-dark-background: var(--background-neutral-900);
+  --cta-background: var(--background-accent-200);
+  --cta-hover-background: var(--background-accent-450);
+  --cta-active-background: var(--background-accent-900);
+  --nav-background: transparent;
+  --nav-scrolled-background: var(--nav-background);
   /* Font & Typography */
   --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -48,7 +49,7 @@
   --font-weight-bold: 700;
   --font-size-200: 0.8125rem;
   --font-size-400: 0.875rem;
-  --font-size-500: 1rem;
+  --font-size-450: 1rem;
   --font-size-600: 1.875rem;
   --font-size-700: 2.5rem;
   --font-size-800: 3.5rem;
@@ -236,23 +237,6 @@ textarea:not([rows]) {
   background-color: var(--color-neutral-900);
 }
 
-button {
-  color: var(--color-neutral-100);
-  background: var(--color-accent-400);
-  padding: 1em 2.5em;
-  border: 0;
-  border-radius: 100vmax;
-  box-shadow: 0 1em 1em -1em var(--color-accent-500);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-button);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button:hover, .button:focus-visible {
-  background: var(--color-accent-300);
-}
-
 .container {
   --max-width: var(--container-max-width);
   --padding: 1rem;
@@ -267,151 +251,6 @@ button {
   word-wrap: break-word;
 }
 
-body {
-  background: var(--body-background);
-  color: var(--text-primary-900);
-}
-body .ornament .blue-circle-light {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(100, 181, 246, 0.6) 100%);
-}
-body header nav {
-  background: var(--nav-background);
-}
-body header nav .brand .brand-link {
-  color: var(--text-primary-100);
-}
-body header nav .nav-list .nav-list-item .nav-link {
-  color: var(--text-primary-450);
-}
-body header nav .nav-list .nav-list-item .nav-link.active,
-body header nav .nav-list .nav-list-item .nav-link:hover {
-  color: var(--text-primary-100);
-}
-body header nav .cta .cta-button {
-  color: var(--cta-text-primary-100);
-  border: 2px solid var(--cta-background);
-}
-body header nav .cta .cta-button:hover {
-  background-color: var(--cta-hover-background);
-}
-body header nav .cta .cta-button:active {
-  background-color: var(--cta-active-background);
-}
-body header nav .navbar-toggler span {
-  background: var(--color-neutral-100);
-}
-body header nav.scrolled {
-  background: var(--nav-scrolled-background);
-}
-body main {
-  color: var(--text-primary-900);
-}
-body main section#hero .copytext .cta .cta-button {
-  background: var(--cta-background);
-  color: var(--cta-text-primary-900);
-  border: 2px solid var(--cta-background);
-}
-body main section#hero .copytext .cta .cta-button:hover {
-  background-color: var(--cta-hover-background);
-}
-body main section#hero .copytext .cta .cta-button:active {
-  background-color: var(--cta-active-background);
-}
-body main section#hero .hero-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-body main section#feature .section-body .feature-list .feature-list-item .feature-details {
-  background: transparent;
-  color: var(--text-primary-900);
-}
-body main section#feature .section-body .feature-list .feature-list-item .feature-details .feature-details-cta {
-  color: var(--text-link-450);
-}
-body main section#feature .section-body .feature-list .feature-list-item .feature-details .feature-details-cta:hover {
-  color: var(--text-link-900);
-}
-body main section#feature .section-body .feature-list .feature-list-item .feature-details .feature-details-cta:active {
-  color: var(--text-link-200);
-}
-body main section#service .section-body .role .as-frontend p,
-body main section#service .section-body .role .as-backend p {
-  color: var(--text-primary-100);
-}
-body main section#service .section-body .service-container .service-list .service-list-item .card {
-  color: var(--text-primary-900);
-}
-body main section#portfolio .section-body .project-category-navigation .project-nav-list .project-nav-list-item .project-nav-link {
-  color: var(--text-link-200);
-}
-body main section#portfolio .section-body .project-category-navigation .project-nav-list .project-nav-list-item .project-nav-link:hover {
-  color: var(--text-link-450);
-}
-body main section#portfolio .section-body .project-category-navigation .project-nav-list .project-nav-list-item .project-nav-link.active {
-  color: var(--text-link-900);
-}
-body main section#portfolio .section-body .project-category-navigation .project-nav-list .project-nav-list-item .project-nav-link:active {
-  color: var(--text-link-900);
-}
-body main section#contact .section-body .container form input,
-body main section#contact .section-body .container form textarea {
-  background: var(--background-primary-450);
-  color: var(--text-primary-100);
-}
-body main section#contact .section-body .container form input::placeholder,
-body main section#contact .section-body .container form textarea::placeholder {
-  color: var(--text-primary-100);
-}
-body main section#contact .section-body .container form input:focus-visible,
-body main section#contact .section-body .container form textarea:focus-visible {
-  outline: var(--color-neutral-100) auto 1px;
-}
-body main section#contact .section-body .container form button {
-  color: var(--text-primary-900);
-  border: 2px solid var(--cta-background);
-}
-body main section#contact .section-body .container form button:hover {
-  background-color: var(--cta-hover-background);
-}
-body main section#contact .section-body .container form button:active {
-  background-color: var(--cta-active-background);
-}
-body main section#contact .section-body .container .contact-list .contact-list-item .contact-link {
-  color: var(--text-link-450);
-}
-body main section#contact .section-body .container .contact-list .contact-list-item .contact-link:hover {
-  color: var(--text-link-900);
-}
-body main section#contact .section-body .container .contact-list .contact-list-item .contact-link:active {
-  color: var(--text-link-200);
-}
-body main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link {
-  color: var(--text-link-450);
-}
-body main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link:hover {
-  color: var(--text-link-900);
-}
-body main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link:hover {
-  color: var(--text-link-200);
-}
-body footer {
-  border-top: 1px solid var(--background-primary-900);
-}
-body footer .footer-nav {
-  color: var(--text-primary-900);
-}
-body footer .footer-nav .nav-list .nav-list-item .nav-link {
-  color: var(--text-link-450);
-}
-body footer .footer-nav .nav-list .nav-list-item .nav-link:hover {
-  color: var(--text-link-900);
-}
-body footer .footer-nav .nav-list .nav-list-item .nav-link:active {
-  color: var(--text-link-200);
-}
-
 body.dark-theme {
   background: var(--body-dark-background);
   color: var(--text-primary-100);
@@ -423,7 +262,10 @@ body.dark-theme header nav {
   background: var(--nav-background);
 }
 body.dark-theme header nav .brand .brand-link {
-  color: var(--text-primary-100);
+  background: linear-gradient(45deg, #04f, #0F4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 body.dark-theme header nav .nav-list .nav-list-item .nav-link {
   color: var(--text-link-450);
@@ -439,14 +281,22 @@ body.dark-theme header nav .nav-list .nav-list-item .nav-link.active {
 }
 body.dark-theme header nav .cta .cta-button {
   background: var(--cta-background);
-  color: var(--cta-text-primary-100);
+  color: var(--cta-text-primary-200);
+  padding: 0.25em 1em;
   border: 2px solid var(--cta-background);
+  border-radius: 100vmax;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 body.dark-theme header nav .cta .cta-button:hover {
   background-color: var(--cta-hover-background);
+  border-color: var(--cta-hover-background);
 }
 body.dark-theme header nav .cta .cta-button:active {
   background-color: var(--cta-active-background);
+  border-color: var(--cta-active-background);
 }
 body.dark-theme header nav .navbar-toggler span {
   background: var(--color-neutral-200);
@@ -584,10 +434,14 @@ body .ornament .blue-circle-light {
 }
 
 header {
-  background: linear-gradient(45deg, #010040, #f00);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 9;
+  text-shadow: 0 6px 12px #000;
 }
 header .utility {
-  background: rgba(100, 180, 246, 0.4);
+  height: 40px;
+  padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -595,8 +449,9 @@ header .utility {
   gap: 2em;
 }
 header .utility .clock {
-  padding: 1em;
+  color: var(--text-primary-100);
   border-radius: 6px;
+  text-align: center;
 }
 header .utility .theme-toggler {
   position: relative;
@@ -635,7 +490,7 @@ header .utility .theme-toggler input[type=checkbox] {
 }
 header nav {
   background: var(--nav-background);
-  min-height: 60px;
+  height: 60px;
   padding: 0 2em;
   display: flex;
   flex-direction: row;
@@ -643,12 +498,14 @@ header nav {
   align-items: center;
   transition: 0.3s;
 }
-header nav .brand {
-  font-size: 1.5em;
-}
 header nav .brand .brand-link {
-  color: var(--text-primary-100);
+  background: linear-gradient(45deg, #04F, #0F4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   text-decoration: none;
+  font-size: 1.5em;
+  font-weight: var(--font-weight-semibold);
 }
 header nav .nav-list {
   max-height: 240px;
@@ -674,7 +531,8 @@ header nav .nav-list .nav-list-item .nav-link:hover {
   color: var(--text-primary-100);
 }
 header nav .cta .cta-button {
-  color: var(--cta-text-primary-100);
+  background: var(--cta-background);
+  color: var(--cta-text-primary-200);
   padding: 0.25em 1em;
   border: 2px solid var(--cta-background);
   border-radius: 100vmax;
@@ -695,7 +553,7 @@ header nav .navbar-toggler {
   cursor: pointer;
 }
 header nav .navbar-toggler span {
-  background: var(--color-neutral-100);
+  background: var(--color-neutral-200);
   width: 100%;
   height: 4px;
   margin: 5px;
@@ -731,37 +589,70 @@ main section .section-body {
   margin: 2em 0;
 }
 main section#hero {
-  min-height: 480px;
+  background: url("../img/drawable/fotor-ai-20240604233547_9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -100px;
+  overflow: hidden;
 }
-main section#hero .container {
-  padding: 0 1em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
+main section#hero .herousel {
+  background: linear-gradient(120deg, hsla(180, 40%, 16%, 0.4), hsla(240, 50%, 8%, 0.2));
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(40px);
 }
-main section#hero .copytext {
+main section#hero .herousel .herousel-list {
+  list-style: none;
+}
+main section#hero .herousel .herousel-list .herousel-list-item {
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+main section#hero .herousel .herousel-list .herousel-list-item .herousel-background-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(8px);
+}
+main section#hero .herousel .herousel-list .herousel-list-item .copytext {
+  width: 40vw;
+  max-width: 1920px;
+  position: absolute;
+  top: 10em;
+  left: 6em;
+  right: 6em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2em;
+  text-shadow: 0 6px 12px #000;
 }
-main section#hero .copytext .hero-headline {
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .hero-headline {
+  font-size: var(--font-size-600);
   line-height: 1.5;
 }
-main section#hero .copytext .hero-description {
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .hero-description {
   line-height: 1.5;
+  text-shadow: 0 6px 12px #000;
 }
-main section#hero .copytext .cta {
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .cta {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 }
-main section#hero .copytext .cta .cta-button {
-  background: var(--cta-background);
-  color: var(--cta-text-primary-900);
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .cta .cta-button {
+  color: var(--cta-text-primary-200);
   padding: 0.25em 1em;
   border: 2px solid var(--cta-background);
   border-radius: 100vmax;
@@ -770,11 +661,198 @@ main section#hero .copytext .cta .cta-button {
   display: inline-block;
   cursor: pointer;
 }
-main section#hero .copytext .cta .cta-button:hover {
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .cta .cta-button:hover {
   background-color: var(--cta-hover-background);
 }
-main section#hero .copytext .cta .cta-button:active {
+main section#hero .herousel .herousel-list .herousel-list-item .copytext .cta .cta-button:active {
   background-color: var(--cta-active-background);
+}
+main section#hero .herousel .herousel-list .herousel-list-item.active {
+  display: block;
+}
+main section#hero .herousel .herousel-navigation {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  z-index: 2;
+}
+main section#hero .herousel .herousel-navigation button {
+  background: rgba(255, 255, 255, 0.2666666667);
+  color: var(--text-primary-100);
+  width: 2em;
+  height: 2em;
+  border: 0;
+  border-radius: 100vmax;
+  font-size: var(--font-size-450);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  position: absolute;
+}
+main section#hero .herousel .herousel-navigation button:hover {
+  background: var(--background-neutral-200);
+  color: var(--text-primary-450);
+}
+main section#hero .herousel .herousel-navigation button#herousel-previous-button {
+  left: 2em;
+}
+main section#hero .herousel .herousel-navigation button#herousel-next-button {
+  right: 2em;
+}
+main section#hero .herousel .herousel-indicator-list {
+  position: absolute;
+  bottom: 1em;
+  left: 20%;
+  right: 20%;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+main section#hero .herousel .herousel-indicator-list .herousel-indicator-list-item {
+  flex: 1;
+}
+main section#hero .herousel .herousel-indicator-list .herousel-indicator-list-item span {
+  background: var(--color-neutral-450);
+  width: 100%;
+  height: 4px;
+  display: block;
+  border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+main section#hero .herousel .herousel-indicator-list .herousel-indicator-list-item span:hover {
+  background: var(--color-neutral-200);
+}
+main section#hero .herousel .herousel-indicator-list .herousel-indicator-list-item.active span {
+  background: var(--color-neutral-200);
+}
+main section#hero .herousel .timer {
+  background: var(--background-primary-450);
+  width: 0%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active {
+  display: block;
+  z-index: 2;
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .herousel-background-image {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  bottom: 1em;
+  border-radius: 1em;
+  animation: herouselBackgroundEntrance 0.4s linear 1 forwards;
+  object-fit: cover;
+}
+@keyframes herouselBackgroundEntrance {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .hero-headline,
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .hero-description,
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .cta {
+  transform: translateY(50px);
+  filter: blur(1em);
+  opacity: 0;
+  animation: herouselEnterance 0.4s 1s linear 1 forwards;
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .hero-headline {
+  animation-delay: 1s;
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .hero-description {
+  animation-delay: 1.2s;
+}
+main section#hero .herousel.next .herousel-list .herousel-list-item.active .copytext .cta {
+  animation-delay: 1.4s;
+}
+@keyframes herouselEnterance {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+main section#hero .herousel.next .herousel-thumbnail-list {
+  transform: translateX(150px);
+  animation: thumbnailMove 0.4s linear 1 forwards;
+}
+main section#hero .herousel.next .herousel-thumbnail-list .herousel-thumbnail-list-item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.4s linear 1 forwards;
+}
+@keyframes showThumbnail {
+  to {
+    width: 150px;
+  }
+}
+@keyframes thumbnailMove {
+  to {
+    transform: translateX(0);
+  }
+}
+main section#hero .herousel.previous .herousel-list .herousel-list-item:nth-child(2) {
+  z-index: 2;
+}
+main section#hero .herousel.previous .herousel-list .herousel-list-item:nth-child(2) img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: imageExit 0.4s linear 1 forwards;
+}
+@keyframes imageExit {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 1em;
+    left: 50%;
+    bottom: 1em;
+  }
+}
+main section#hero .herousel.previous .herousel-list .herousel-list-item:nth-child(2) .copytext .hero-headline,
+main section#hero .herousel.previous .herousel-list .herousel-list-item:nth-child(2) .copytext .hero-description,
+main section#hero .herousel.previous .herousel-list .herousel-list-item:nth-child(2) .copytext .cta {
+  animation: copytextOut 0.4s linear 1 forwards;
+}
+@keyframes copytextOut {
+  to {
+    transform: translateY(-150px);
+    filter: blur(1em);
+    opacity: 0;
+  }
+}
+main section#hero .herousel.previous .herousel-thumbnail-list .herousel-thumbnail-list-item:nth-child(1) {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.4s linear 1 forwards;
+}
+main section#hero .herousel-next .herousel-navigation button,
+main section#hero .herousel-previous .herousel-navigation button {
+  pointer-events: none;
+}
+main section#hero .herousel-next .timer,
+main section#hero .herousel-previous .timer {
+  width: 100%;
+  animation: timerRunning 2s linear 1 forwards;
+}
+@keyframes timerRunning {
+  to {
+    width: 0;
+  }
 }
 main section#hero .hero-image {
   display: flex;
@@ -875,7 +953,8 @@ main section#service .section-body .role {
 }
 main section#service .section-body .role .as-frontend,
 main section#service .section-body .role .as-backend {
-  max-width: 200px;
+  width: 200px;
+  max-width: 50%;
   margin: 0 auto;
   cursor: pointer;
   position: relative;
@@ -919,6 +998,7 @@ main section#service .section-body .service-container .service-list {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1em;
   overflow-x: auto;
 }
@@ -932,7 +1012,7 @@ main section#service .section-body .service-container .service-list .service-lis
   padding: 2em 6px;
 }
 main section#service .section-body .service-container .service-list .service-list-item .card .card-header {
-  font-size: var(--font-size-500);
+  font-size: var(--font-size-450);
 }
 main section#service .section-body .service-container .service-list .service-list-item .card .card-body {
   margin: 2em 0;
@@ -1025,7 +1105,7 @@ main section#contact .section-body .container form textarea::placeholder {
 }
 main section#contact .section-body .container form input:focus-visible,
 main section#contact .section-body .container form textarea:focus-visible {
-  outline: var(--color-neutral-100) auto 1px;
+  outline: var(--color-neutral-200) auto 1px;
 }
 main section#contact .section-body .container form button {
   color: var(--text-primary-900);
@@ -1151,6 +1231,37 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
   }
   header .cta {
     display: none;
+  }
+  main section#hero .herousel .herousel-list .herousel-list-item .copytext {
+    top: 8em;
+  }
+  main section#hero .herousel .herousel-list .herousel-list-item .copytext .hero-headline {
+    font-size: var(--font-size-450);
+    line-height: 1.5;
+  }
+  main section#hero .herousel .herousel-list .herousel-list-item .copytext .hero-description {
+    font-size: var(--font-size-200);
+    line-height: 1.5;
+  }
+  main section#hero .herousel .herousel-list .herousel-list-item .copytext .cta .cta-button {
+    font-size: var(--font-size-200);
+  }
+  main section#about .section-body {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  main section#about .section-body .picture-of-me {
+    justify-content: center;
+  }
+  main section#feature .section-body .feature-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+  main section#feature .section-body .feature-list .feature-list-item {
+    grid-template-columns: 1fr;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
