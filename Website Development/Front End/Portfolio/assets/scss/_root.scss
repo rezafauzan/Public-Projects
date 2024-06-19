@@ -3,7 +3,7 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     
-    --color-primary-200: snow;
+    --color-primary-200: rgb(255, 250, 250);
     --color-primary-450: rgba(4, 1, 28);
     --color-primary-900: #000000;
     --color-accent-200: #28A4DF;
@@ -25,7 +25,7 @@
     --background-accent-450: var(--color-accent-450);
     --background-accent-900: var(--color-accent-900);
 
-    --text-primary-100: var(--color-neutral-200);
+    --text-primary-200: var(--color-neutral-200);
     --text-primary-450: var(--color-neutral-450);
     --text-primary-900: var(--color-neutral-900);
     
@@ -47,10 +47,10 @@
 
     /* Font & Typography */
     --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-family-monospace: Consolas, Menlo, SFMono-Regular, Monaco, "Liberation Mono", "Courier New", monospace;
 
     --font-family-primary: var(--font-family-sans-serif);
-    --font-family-body: var(--font-family-sans-serif);
+    --font-family-body: var(--font-family-monospace);
     --font-family-heading: var(--font-family-sans-serif);
 
     --font-weight-regular: 400;
