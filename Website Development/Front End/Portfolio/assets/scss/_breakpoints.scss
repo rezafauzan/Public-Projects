@@ -63,6 +63,22 @@
 
         }
 
+        section#service{
+
+            .section-body{
+
+                .service-container{
+
+                    .service-list#service-list{
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 
     footer {
@@ -158,6 +174,22 @@
 
                     .feature-list-item {
                         grid-template-columns: 1fr;
+                    }
+
+                }
+
+            }
+
+        }
+
+        section#service{
+
+            .section-body{
+
+                .service-container{
+
+                    .service-list{
+                        grid-template-columns: repeat(2, 1fr);
                     }
 
                 }

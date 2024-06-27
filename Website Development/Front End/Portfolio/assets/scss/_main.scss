@@ -361,11 +361,18 @@ main {
                         list-style: none;
 
                         .tech-stack-list-item{
-                            
+                            flex: 1;
+
                             img{
                                 max-height: 80px;
+                                max-width: 80px;
+                                width: 100%;
                             }
 
+                        }
+
+                        .tech-stack-list-item:first-child{
+                            width: max-content;
                         }
 
                     }
@@ -373,14 +380,15 @@ main {
                 }
 
                 .service-list {
+                    width: 100%;
                     list-style: none;
-                    @include d-flex(flex-start, center, row);
-                    flex-wrap: wrap;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    // @include d-flex(flex-start, center, row);
+                    // flex-wrap: wrap;
                     gap: 1em;
 
                     .service-list-item {
-                        max-width: 330px;
-                        min-width: 200px;
                         flex: 1;
 
                         .card {

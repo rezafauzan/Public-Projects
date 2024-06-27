@@ -807,21 +807,25 @@ main section#service .section-body .service-container .tech-stack .tech-stack-li
   gap: 1em;
   list-style: none;
 }
+main section#service .section-body .service-container .tech-stack .tech-stack-list .tech-stack-list-item {
+  flex: 1;
+}
 main section#service .section-body .service-container .tech-stack .tech-stack-list .tech-stack-list-item img {
   max-height: 80px;
+  max-width: 80px;
+  width: 100%;
+}
+main section#service .section-body .service-container .tech-stack .tech-stack-list .tech-stack-list-item:first-child {
+  width: max-content;
 }
 main section#service .section-body .service-container .service-list {
+  width: 100%;
   list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1em;
 }
 main section#service .section-body .service-container .service-list .service-list-item {
-  max-width: 330px;
-  min-width: 200px;
   flex: 1;
 }
 main section#service .section-body .service-container .service-list .service-list-item .card {
@@ -1097,6 +1101,9 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
   main section#feature .section-body .feature-list .feature-list-item .card {
     height: unset;
   }
+  main section#service .section-body .service-container .service-list#service-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
   footer .footer-nav {
     flex-direction: column;
   }
@@ -1151,6 +1158,9 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
   }
   main section#feature .section-body .feature-list .feature-list-item {
     grid-template-columns: 1fr;
+  }
+  main section#service .section-body .service-container .service-list {
+    grid-template-columns: repeat(2, 1fr);
   }
   main section#contact {
     padding: 0;
