@@ -329,15 +329,10 @@
 
 body.dark-theme {
     background: var(--body-dark-background);
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(1.85em);
     color: var(--text-primary-200);
-
-    .ornament {
-
-        .blue-circle-light {
-            background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-        }
-
-    }
 
     header {
 
@@ -361,19 +356,19 @@ body.dark-theme {
                 .nav-list-item {
 
                     .nav-link {
-                        color: var(--text-link-450);
+                        color: var(--text-link-white);
                     }
 
                     .nav-link:hover {
-                        color: var(--text-link-900);
+                        color: var(--text-link-200);
                     }
 
                     .nav-link:active {
-                        color: var(--text-link-200);
+                        color: var(--text-link-900);
                     }
 
                     .nav-link.active {
-                        color: var(--text-link-200);
+                        color: var(--text-link-900);
                     }
 
                 }

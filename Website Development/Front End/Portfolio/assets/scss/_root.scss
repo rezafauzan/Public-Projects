@@ -1,9 +1,9 @@
 :root {
     /* Theme */
-    --color-white: #FFFFFF;
+    --color-white: snow;
     --color-black: #000000;
     
-    --color-primary-200: rgb(255, 250, 250);
+    --color-primary-200: var(--color-white);
     --color-primary-450: rgba(4, 1, 28);
     --color-primary-900: #000000;
     --color-accent-200: #28A4DF;
@@ -29,6 +29,8 @@
     --text-primary-450: var(--color-neutral-450);
     --text-primary-900: var(--color-neutral-900);
     
+    --text-link-white: var(--color-primary-200);
+    --text-link-black: var(--color-primary-900);
     --text-link-200: var(--color-accent-200);
     --text-link-450: var(--color-accent-450);
     --text-link-900: var(--color-accent-900);
@@ -37,8 +39,8 @@
     --cta-text-primary-450: var(--color-accent-450);
     --cta-text-primary-900: var(--color-accent-900);
 
-    --body-background: snow;
-    --body-dark-background: var(--background-neutral-900);
+    --body-background: var(--color-primary-200);
+    --body-dark-background: url("../img/drawable/fotor-ai1.jpg");
     --cta-background: var(--background-accent-200);
     --cta-hover-background: var(--background-accent-450);
     --cta-active-background: var(--background-accent-900);
@@ -70,16 +72,11 @@
     --font-size-secondary-heading: var(--font-size-600);
     --font-size-button: var(--font-size-200);
 
-    /* Layout */    
-    --grid-columns: 12;
-    --grid-gutter-width: 16px;
-    --container-max-width: 1920px;
-
 }
 
 @media (min-width: 50rem) {
     :root {
-        --font-size-body: var(--font-size-500);
+        --font-size-body: var(--font-size-450);
         --font-size-nav: var(--font-size-400);
         --font-size-primary-heading: var(--font-size-800);
         --font-size-secondary-heading: var(--font-size-700);
