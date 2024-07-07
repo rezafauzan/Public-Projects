@@ -7,8 +7,8 @@
     --color-primary-450: rgba(4, 1, 28);
     --color-primary-900: #000000;
     --color-accent-200: #28A4DF;
-    --color-accent-450: #0F98D8;
-    --color-accent-900: #0F88D8;
+    --color-accent-400: #0F88D8;
+    --color-accent-800: #0F44D8;
     --color-neutral-200: var(--color-white);
     --color-neutral-450: #4D4D4D;
     --color-neutral-900: var(--color-black);
@@ -22,8 +22,8 @@
     --background-primary-900: var(--color-primary-900);
     
     --background-accent-200: var(--color-accent-200);
-    --background-accent-450: var(--color-accent-450);
-    --background-accent-900: var(--color-accent-900);
+    --background-accent-400: var(--color-accent-400);
+    --background-accent-800: var(--color-accent-800);
 
     --text-primary-200: var(--color-neutral-200);
     --text-primary-450: var(--color-neutral-450);
@@ -32,18 +32,18 @@
     --text-link-white: var(--color-primary-200);
     --text-link-black: var(--color-primary-900);
     --text-link-200: var(--color-accent-200);
-    --text-link-450: var(--color-accent-450);
-    --text-link-900: var(--color-accent-900);
+    --text-link-400: var(--color-accent-400);
+    --text-link-800: var(--color-accent-800);
 
     --cta-text-primary-200: var(--color-neutral-200);
-    --cta-text-primary-450: var(--color-accent-450);
-    --cta-text-primary-900: var(--color-accent-900);
+    --cta-text-primary-400: var(--color-accent-400);
+    --cta-text-primary-800: var(--color-accent-800);
 
     --body-background: var(--color-primary-200);
     --body-dark-background: url("../img/drawable/fotor-ai1.jpg");
     --cta-background: var(--background-accent-200);
-    --cta-hover-background: var(--background-accent-450);
-    --cta-active-background: var(--background-accent-900);
+    --cta-hover-background: var(--background-accent-400);
+    --cta-active-background: var(--background-accent-800);
     --nav-background: transparent;
     --nav-scrolled-background: var(--nav-background);
 
