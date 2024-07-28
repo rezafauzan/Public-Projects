@@ -22,7 +22,6 @@
     background: var(--card-background);
     color: var(--card-font-color);
     width: 100%;
-    padding: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
@@ -32,6 +31,7 @@
     overflow: hidden;
 
     .card-header {
+        width: 100%;
         max-height: var(--card-header-max-height);
 
         .card-header-image {
@@ -43,7 +43,7 @@
 
     .card-body {
         color: inherit;
-
+        padding: 1em;
         @include d-flex(center, flex-start, column);
         gap: 1em;
 

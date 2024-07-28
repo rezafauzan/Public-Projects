@@ -1,29 +1,64 @@
 main {
     display: grid;
     justify-content: center;
+    grid-template-columns: 1fr;
     // grid-template-areas: 
     // 'hero'
     // 'project'
     // 'about';
 
-    .section-nav{
-        // display: none;
+    .section-nav {
+        width: 8em;
+        background: var(--background-primary-900);
+        padding: 1em;
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
         position: fixed;
-        top: 40%;
-        right: 0;
+        top: 40% - 20%;
+        right: -8em;
         z-index: 4;
 
-        .section-nav-list{
+        #section-nav-toggler {
+            background: var(--background-primary-900);
+            color: var(--color-neutral-200);
+            padding: 10px;
+            border: 0;
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+            cursor: pointer;
+            content: '&ltghkgkgkjgkgkgkgk';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+        }
+
+        #section-nav-toggler:hover {
+            background: var(--background-primary-200);
+            color: var(--color-neutral-900);
+        }
+
+        .section-nav-list {
             @include d-flex(center, center, column);
             gap: 1em;
             list-style: none;
 
-            .section-nav-list-item{
+            .section-nav-list-item {
                 flex: 1;
+
+                .section-nav-header {
+                    font-size: 62%;
+                    text-align: center;
+                }
 
                 .section-nav-link {
                     color: var(--text-link-white);
+                    font-size: 80%;
                     text-decoration: none;
+
+                    .section-nav-link-icon {
+                        width: 40px;
+                    }
+
                 }
 
                 .section-nav-link:hover {
@@ -38,9 +73,17 @@ main {
                     color: var(--text-link-800);
                 }
 
-
             }
 
+        }
+
+    }
+
+    .section-nav.show {
+        right: 0;
+
+        #section-nav-toggler {
+            content: '&gt';
         }
 
     }
@@ -392,16 +435,16 @@ main {
                     @include d-flex(center, flex-start, column);
                     gap: 1em;
 
-                    .tech-stack-list{
+                    .tech-stack-list {
                         @include d-flex(flex-start, center, row);
                         flex-wrap: wrap;
                         gap: 1em;
                         list-style: none;
 
-                        .tech-stack-list-item{
+                        .tech-stack-list-item {
                             flex: 1;
 
-                            img{
+                            img {
                                 max-height: 80px;
                                 max-width: 80px;
                                 width: 100%;
@@ -409,7 +452,7 @@ main {
 
                         }
 
-                        .tech-stack-list-item:first-child{
+                        .tech-stack-list-item:first-child {
                             width: max-content;
                         }
 
@@ -427,7 +470,7 @@ main {
                     gap: 2em;
 
                     .service-list-item {
-                        
+
                         .card {
                             background: rgba(0, 0, 64, 0.1);
                             backdrop-filter: blur(40px);
@@ -666,6 +709,146 @@ main {
 
                     }
 
+                }
+
+            }
+
+        }
+
+    }
+
+    section#product {
+
+        .container{
+            background: rgba(40, 40, 40, 0.8);
+            backdrop-filter: blur(40px);
+        }
+
+        .section-body {
+            width: 100%;
+
+            .product-list {
+                width: 100%;
+                margin-bottom: 2em;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 1fr;
+                gap: 1em;
+                list-style: none;
+
+                .product-list-item {
+                    
+                    .card {
+                        background: rgba(0, 0, 64, 0.4);
+                        color: snow;
+                        box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
+
+                        .card-header{
+                            background: blue;
+                            height: 160px;
+                        }
+
+                        .card-body{
+                            height: 80px;
+                            padding: 1em;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .product-pagination-list{
+                @include d-flex(center, center, row);
+                gap: 1em;
+                list-style: none;
+
+                .product-pagination-link {
+                    color: var(--text-link-white);
+                    text-decoration: none;
+                }
+
+                .product-pagination-link:hover {
+                    color: var(--text-link-200);
+                }
+
+                .product-pagination-link:active {
+                    color: var(--text-link-800);
+                }
+
+                .product-pagination-link.active {
+                    color: var(--text-link-800);
+                }
+
+            }
+
+        }
+
+    }
+
+    section#service {
+
+        .container{
+            background: rgba(40, 40, 40, 0.8);
+            backdrop-filter: blur(40px);
+        }
+
+        .section-body {
+            width: 100%;
+
+            .service-list {
+                width: 100%;
+                margin-bottom: 2em;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 1fr;
+                gap: 1em;
+                list-style: none;
+
+                .service-list-item {
+
+                    .card {
+                        background: rgba(0, 0, 64, 0.4);
+                        color: snow;
+                        box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
+
+                        .card-header{
+                            background: blue;
+                            height: 160px;
+                        }
+
+                        .card-body{
+                            height: 80px;
+                            padding: 1em;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .service-pagination-list{
+                @include d-flex(center, center, row);
+                gap: 1em;
+                list-style: none;
+
+                .service-pagination-link {
+                    color: var(--text-link-white);
+                    text-decoration: none;
+                }
+
+                .service-pagination-link:hover {
+                    color: var(--text-link-200);
+                }
+
+                .service-pagination-link:active {
+                    color: var(--text-link-800);
+                }
+
+                .service-pagination-link.active {
+                    color: var(--text-link-800);
                 }
 
             }

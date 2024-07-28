@@ -89,6 +89,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
@@ -112,11 +113,6 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
 }
 
 @font-face {
@@ -218,7 +214,6 @@ select {
   background: var(--card-background);
   color: var(--card-font-color);
   width: 100%;
-  padding: 1em;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
@@ -230,6 +225,7 @@ select {
   overflow: hidden;
 }
 .card .card-header {
+  width: 100%;
   max-height: var(--card-header-max-height);
 }
 .card .card-header .card-header-image {
@@ -238,6 +234,7 @@ select {
 }
 .card .card-body {
   color: inherit;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -379,7 +376,6 @@ body.dark-theme {
   background: var(--body-dark-background);
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(1.85em);
   color: var(--text-primary-200);
 }
 body.dark-theme header nav {
@@ -667,12 +663,35 @@ header nav .navbar-toggler.show span {
 main {
   display: grid;
   justify-content: center;
+  grid-template-columns: 1fr;
 }
 main .section-nav {
+  width: 8em;
+  background: var(--background-primary-900);
+  padding: 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
   position: fixed;
-  top: 40%;
-  right: 0;
+  top: 20%;
+  right: -8em;
   z-index: 4;
+}
+main .section-nav #section-nav-toggler {
+  background: var(--background-primary-900);
+  color: var(--color-neutral-200);
+  padding: 10px;
+  border: 0;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  cursor: pointer;
+  content: "&ltghkgkgkjgkgkgkgk";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+}
+main .section-nav #section-nav-toggler:hover {
+  background: var(--background-primary-200);
+  color: var(--color-neutral-900);
 }
 main .section-nav .section-nav-list {
   display: flex;
@@ -685,9 +704,17 @@ main .section-nav .section-nav-list {
 main .section-nav .section-nav-list .section-nav-list-item {
   flex: 1;
 }
+main .section-nav .section-nav-list .section-nav-list-item .section-nav-header {
+  font-size: 62%;
+  text-align: center;
+}
 main .section-nav .section-nav-list .section-nav-list-item .section-nav-link {
   color: var(--text-link-white);
+  font-size: 80%;
   text-decoration: none;
+}
+main .section-nav .section-nav-list .section-nav-list-item .section-nav-link .section-nav-link-icon {
+  width: 40px;
 }
 main .section-nav .section-nav-list .section-nav-list-item .section-nav-link:hover {
   color: var(--text-link-200);
@@ -697,6 +724,12 @@ main .section-nav .section-nav-list .section-nav-list-item .section-nav-link:act
 }
 main .section-nav .section-nav-list .section-nav-list-item .section-nav-link.active {
   color: var(--text-link-800);
+}
+main .section-nav.show {
+  right: 0;
+}
+main .section-nav.show #section-nav-toggler {
+  content: "&gt";
 }
 main section {
   max-width: 100vw;
@@ -1213,6 +1246,106 @@ main section#contact .section-body .container .social-media-list .social-media-l
 main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link:hover {
   color: var(--text-link-200);
 }
+main section#product .container {
+  background: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(40px);
+}
+main section#product .section-body {
+  width: 100%;
+}
+main section#product .section-body .product-list {
+  width: 100%;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1em;
+  list-style: none;
+}
+main section#product .section-body .product-list .product-list-item .card {
+  background: rgba(0, 0, 64, 0.4);
+  color: snow;
+  box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
+}
+main section#product .section-body .product-list .product-list-item .card .card-header {
+  background: blue;
+  height: 160px;
+}
+main section#product .section-body .product-list .product-list-item .card .card-body {
+  height: 80px;
+  padding: 1em;
+}
+main section#product .section-body .product-pagination-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+main section#product .section-body .product-pagination-list .product-pagination-link {
+  color: var(--text-link-white);
+  text-decoration: none;
+}
+main section#product .section-body .product-pagination-list .product-pagination-link:hover {
+  color: var(--text-link-200);
+}
+main section#product .section-body .product-pagination-list .product-pagination-link:active {
+  color: var(--text-link-800);
+}
+main section#product .section-body .product-pagination-list .product-pagination-link.active {
+  color: var(--text-link-800);
+}
+main section#service .container {
+  background: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(40px);
+}
+main section#service .section-body {
+  width: 100%;
+}
+main section#service .section-body .service-list {
+  width: 100%;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1em;
+  list-style: none;
+}
+main section#service .section-body .service-list .service-list-item .card {
+  background: rgba(0, 0, 64, 0.4);
+  color: snow;
+  box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
+}
+main section#service .section-body .service-list .service-list-item .card .card-header {
+  background: blue;
+  height: 160px;
+}
+main section#service .section-body .service-list .service-list-item .card .card-body {
+  height: 80px;
+  padding: 1em;
+}
+main section#service .section-body .service-pagination-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+main section#service .section-body .service-pagination-list .service-pagination-link {
+  color: var(--text-link-white);
+  text-decoration: none;
+}
+main section#service .section-body .service-pagination-list .service-pagination-link:hover {
+  color: var(--text-link-200);
+}
+main section#service .section-body .service-pagination-list .service-pagination-link:active {
+  color: var(--text-link-800);
+}
+main section#service .section-body .service-pagination-list .service-pagination-link.active {
+  color: var(--text-link-800);
+}
 
 footer {
   padding: 2em;
@@ -1415,6 +1548,10 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
 @media only screen and (min-width: 1200px) {
   .page-wrapper {
     max-width: 1600px;
+  }
+  main .section-nav {
+    width: 16em;
+    right: -16em;
   }
 }
 body {
