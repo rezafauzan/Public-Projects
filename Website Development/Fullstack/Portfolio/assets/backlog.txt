@@ -1,0 +1,15 @@
+To Do:
+-Integrate Backend
+
+Create Pages:
+-About
+-Resume
+-Portfolio
+-Product
+-Service
+-Contact
+-Journal
+-Blog
+-Sertification, Training, Achievment Wall
+-Term & Condition
+-Customer Service
