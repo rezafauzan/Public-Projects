@@ -221,12 +221,10 @@
             .section-body {
                 padding: 0;
 
-                .container {
-
+                .contact-container{
                     .contact-list {
-                        grid-template-columns: 1fr;
+                        grid-template-columns: 1fr; 
                     }
-
                 }
 
             }
@@ -347,8 +345,8 @@
     main{
 
         .section-nav{
-            width: 16em;
-            right: -16em;
+            width: 16%;
+            right: -16%;
         }
 
     }

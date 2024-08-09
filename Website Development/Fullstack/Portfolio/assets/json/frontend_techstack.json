@@ -1,0 +1,56 @@
+[
+  {
+    "techstack_name": "HTML",
+    "techstack_type": "Language",
+    "techstack_icon": "assets/img/vendor/html-5-svgrepo-com.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "CSS",
+    "techstack_type": "Language",
+    "techstack_icon": "assets/img/vendor/css-3-svgrepo-com.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "JS",
+    "techstack_type": "Language",
+    "techstack_icon": "assets/img/vendor/js-official-svgrepo-com.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "Bootstrap",
+    "techstack_type": "Framework",
+    "techstack_icon": "assets/img/vendor/bootstrap-svgrepo-com.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "Tailwinds",
+    "techstack_type": "Framework",
+    "techstack_icon": "assets/img/vendor/tailwindcss-white-full.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "React",
+    "techstack_type": "Library",
+    "techstack_icon": "assets/img/vendor/React-icon.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "SASS",
+    "techstack_type": "Preprocessor",
+    "techstack_icon": "assets/img/vendor/sass-full-svgrepo-com.svg",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "Webpack",
+    "techstack_type": "Bundler",
+    "techstack_icon": "assets/img/vendor/",
+    "techstack_category_name": "Frontend"
+  },
+  {
+    "techstack_name": "Vite",
+    "techstack_type": "Bundler",
+    "techstack_icon": "assets/img/vendor/",
+    "techstack_category_name": "Frontend"
+  }
+]

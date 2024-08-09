@@ -1,7 +1,21 @@
 To Do:
--Integrate Backend
+-Integrate Backend (Done)
+-Create Database (Done)
+-Create Database Scheme (Done)
+-Create Table "hero" (Done)
+-Create Table "about" (Done)
+-Create Table "feature" (Done)
+-Create Table "service" (Done)
+-Create Table "techstack" (Done)
+-Create Table "service_category" (Done)
+-Create Table "techstack_category" (Done)
+-Populate Hero Section Content from Database (Done)
+-Populate About Section Content from Database (Done)
+-Populate Feature Section Content from Database (Done)
+-Populate Service Section Content from Database (Done)
 
-Create Pages:
+
+*Create Pages:
 -About
 -Resume
 -Portfolio

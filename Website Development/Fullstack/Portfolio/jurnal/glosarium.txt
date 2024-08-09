@@ -1,4 +1,4 @@
-Interpolasi
+Interpolation
 adalah suatu metode pemanggilan isi variable di dalam string
 contoh dalam bahasa pemrograman php <?php $nama="Reza"; $Greeting="Halo nama saya $nama"; ?>
 

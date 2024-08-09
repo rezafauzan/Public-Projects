@@ -3,11 +3,13 @@
 @import 'mixin';
 @import 'typography';
 @import 'utilities';
+@import 'animation/keyframe';
 @import 'components';
 @import 'theme_style';
 @import 'header';
 @import 'main';
-@import 'product';
+@import 'pages/product';
+@import 'pages/service';
 @import 'footer';
 @import 'breakpoints';
 

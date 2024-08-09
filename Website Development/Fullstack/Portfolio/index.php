@@ -1,7 +1,13 @@
 <?php
 require 'database_handler.php';
-$hero_content = fetch($db, "SELECT * FROM hero", 2);
+$hero_contents = fetch("hero_headline, hero_description", "hero", 4);
+$about_contents = fetch("about_headline, about_content, about_picture", "about", 4);
+$feature_contents = fetch("feature_title, feature_description, feature_icon", "feature", 4);
+$services = fetchleftjoined(["service_title", "service_description", "service_image"], ["service_category_name"], "service", "service_category", "service_category_id", "id", 4);
+$frontend_techstacks = fetchleftjoined(["techstack_name", "techstack_type", "techstack_icon"], ["techstack_category_name"], "techstack", "techstack_category", "techstack_category_id", "id where techstack_category_id = 1", 4);
+$backend_techstacks = fetchleftjoined(["techstack_name", "techstack_type", "techstack_icon"], ["techstack_category_name"], "techstack", "techstack_category", "techstack_category_id", "id where techstack_category_id = 1", 4);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +22,13 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
 <body class="dark-theme">
 
     <div class="page-wrapper">
+
+        <?php if (isset($_SESSION['error_message'])) : ?>
+            <div class="modal alert">
+                <?= $_SESSION['error_message']; ?>
+            </div>
+        <?php session_unset(); endif; ?>
+
         <header>
 
             <div class="utility">
@@ -107,14 +120,14 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
                     <div class="herousel" id="herousel">
 
                         <ul class="herousel-list">
-                            <?php foreach ($hero_content as $index => $hc): ?>
+                            <?php foreach ($hero_contents as $index => $hero_content) : ?>
                                 <li class="herousel-list-item <?= ($index === 0) ? "active" : ""; ?>">
                                     <div class="copytext">
                                         <h2 class="hero-headline">
-                                            <?= $hc["hero_headline"]; ?>
+                                            <?= $hero_content->hero_headline; ?>
                                         </h2>
                                         <p class="hero-description">
-                                            <?= $hc["hero_description"]; ?>
+                                            <?= $hero_content->hero_description; ?>
                                         </p>
                                     </div>
                                 </li>
@@ -141,31 +154,25 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
                     </div>
 
                     <div class="section-body">
-
-                        <div class="me">
-
-                            <h3>Hi my name is Reza i am a tech enthusiast</h3>
-                            <p>i will help you to Transform your ideas into fancy secure and high performance Websites
-                                as
-                                posible</p>
-                            <p>turn your design into a custom high-performing websites. With a focus on design
-                                and functionality
+                        <?php foreach ($about_contents as $index => $about_content) : ?>
+                            <div class="me">
+                                <h3><?= $about_content->about_headline; ?></h3>
+                                <?= $about_content->about_content; ?>
                                 <!-- I create digital experiences that engage, inspire, and set you
-                            apart.-->
-                            </p>
+                                apart.-->
 
-                            <div class="cta">
-                                <p>More about me on my <a href="#resume" class="cta-button">resume here ></a></p>
+                                <div class="cta">
+                                    <p>More about me on my <a href="#resume" class="cta-button">resume here ></a></p>
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <div class="picture-of-me">
-                            <div class="picture-frame">
-                                <img src="assets/img/me/profile.jpg" alt="Reza Fauzan Adhima's portrait">
+                            <div class="picture-of-me">
+                                <div class="picture-frame">
+                                    <img src="assets/img/me/<?= $about_content->about_picture; ?>" alt="Reza Fauzan Adhima's portrait">
+                                </div>
                             </div>
-                        </div>
-
+                        <?php endforeach; ?>
                     </div>
 
                 </div>
@@ -181,166 +188,28 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
                     <div class="section-body">
 
                         <ul class="feature-list">
+                            <?php foreach ($feature_contents as $index => $feature_content) : ?>
+                                <li class="feature-list-item">
+                                    <div class="card">
 
-                            <li class="feature-list-item">
-                                <div class="card">
+                                        <div class="card-header">
+                                            <img src="assets/img/drawable/<?= $feature_content->feature_icon; ?>" alt="Zigzag's Infinity features Clean, Semantic, And Maintenable Source Code" class="card-header-image">
+                                        </div>
 
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Clean,Semantic,Maintainable.svg"
-                                            alt="Zigzag's Infinity features Clean, Semantic, And Maintenable Source Code"
-                                            class="card-header-image">
+                                        <div class="card-body">
+                                            <h3 class="feature-details-title">
+                                                <?= $feature_content->feature_title; ?>
+                                            </h3>
+                                            <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
+                                            <p class="feature-details-description">
+                                                <?= $feature_content->feature_description; ?>
+                                                <!-- <a href="#" class="card-cta-link">Learn more here ></a> -->
+                                            </p>
+                                        </div>
+
                                     </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            Clean, Semantic, And Maintenable Source Code
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">
-                                            For Future Update <a href="#" class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Search Engine Friendly.svg"
-                                            alt="Zigzag's Infinity features SEO Friendly App" class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            SEO Friendly App
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">Make your business easier to find by SEO
-                                            Optimized App <a href="#" class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Responsive UI.svg"
-                                            alt="Zigzag's Infinity features Responsive User Interface"
-                                            class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            Responsive User Interface
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">Multiplatform ready with Responsive User
-                                            Interface <a href="#" class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Optimized UI UX.svg"
-                                            alt="Zigzag's Infinity features Optimized User Interface & User Experience"
-                                            class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            Optimized User Interface & User Experience
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">Engage your customer with Good Optimized
-                                            User Interface And User Experience <a href="#" class="card-cta-link">Learn
-                                                more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Support Disable with Good Accessibility App.svg"
-                                            alt="Zigzag's Infinity features Optimized user accesibility"
-                                            class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            Optimized user accesibility
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">
-                                            Support Disable with optimized accesibility UI
-                                            for screen reader
-                                            <a href="#" class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/High Performance App Mini.svg"
-                                            alt="Zigzag's Infinity features High Speed Performance App"
-                                            class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            High Speed Performance App
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">
-                                            <a href="#" class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li class="feature-list-item">
-                                <div class="card">
-
-                                    <div class="card-header">
-                                        <img src="assets/img/drawable/Infinycon/Security Following OWASP Top 10 Guide.svg"
-                                            alt="Zigzag's Infinity features Security Following OWASP Top 10 Guide"
-                                            class="card-header-image">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h3 class="feature-details-title">
-                                            Security Following OWASP Top 10 Guide
-                                        </h3>
-                                        <!-- <p class="feature-details-subtitle">Feature Subtitle</p> -->
-                                        <p class="feature-details-description">We made app based 10 OASP Security
-                                            Standard
-                                            and
-                                            Best Practice as posible to make a strong and optimize system <a href="#"
-                                                class="card-cta-link">Learn more here ></a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </li>
-
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
 
                     </div>
@@ -531,69 +400,68 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
             </section> -->
 
             <section class="contact" id="contact">
+                <div class="container">
+                    <div class="section-heading">
+                        <h2>Get in touch</h2>
+                        <p>Reach me out by fill this form i'll get in touch soon also check my social media below</p>
+                    </div>
 
-                <div class="section-heading">
-                    <h2>Get in touch</h2>
-                    <p>Reach me out by fill this form i'll get in touch soon also check my social media below</p>
-                </div>
+                    <div class="section-body">
+                        <div class="contact-container">
+                            <form method="POST" action="#">
+                                <input type="email" name="email" id="email" placeholder="Email address">
+                                <textarea name="messages" id="messages" placeholder="Additional messages"></textarea>
+                                <button type="submit">Contact us</button>
+                            </form>
 
-                <div class="section-body">
-                    <div class="container">
-                        <form method="POST" action="#">
-                            <input type="email" name="email" id="email" placeholder="Email address">
-                            <textarea name="messages" id="messages" placeholder="Additional messages"></textarea>
-                            <button type="submit">Contact us</button>
-                        </form>
+                            <ul class="contact-list">
+                                <li class="contact-list-item">
+                                    <img src="assets/img/vendor/email.svg" alt="Email">
+                                    <p>rezafauzan593@gmail.com</p>
+                                    <p>rezafauzan945@gmail.com</p>
+                                </li>
+                                <li class="contact-list-item">
+                                    <img src="assets/img/vendor/youtube_small_logo.svg" alt="Youtube">
+                                    <div class="youtube">
+                                        <p>Learn a little from me</p>
+                                        <a href="https://youtube.com/@rezafauzanadhima" class="contact-link">Reza Fauzan
+                                            Adhima</a>
+                                        <p>Let's have some fun</p>
+                                        <a href="https://youtube.com/@rezafauzanadhima" class="contact-link">Reza Fauzan
+                                            Adhima</a>
+                                    </div>
+                                </li>
+                                <li class="contact-list-item">
+                                    <img src="assets/img/vendor/Telegram_logo.svg" alt="Telegram">
+                                    <a href="https://telegram/@rezafauzanadhima" class="contact-link">@RezaFauzan1945</a>
+                                </li>
+                            </ul>
 
-                        <ul class="contact-list">
-                            <li class="contact-list-item">
-                                <img src="assets/img/vendor/email.svg" alt="Email">
-                                <p>rezafauzan593@gmail.com</p>
-                                <p>rezafauzan945@gmail.com</p>
-                            </li>
-                            <li class="contact-list-item">
-                                <img src="assets/img/vendor/youtube_small_logo.svg" alt="Youtube">
-                                <div class="youtube">
-                                    <p>Learn a little from me</p>
-                                    <a href="https://youtube.com/@rezafauzanadhima" class="contact-link">Reza Fauzan
-                                        Adhima</a>
-                                    <p>Let's have some fun</p>
-                                    <a href="https://youtube.com/@rezafauzanadhima" class="contact-link">Reza Fauzan
-                                        Adhima</a>
-                                </div>
-                            </li>
-                            <li class="contact-list-item">
-                                <img src="assets/img/vendor/Telegram_logo.svg" alt="Telegram">
-                                <a href="https://telegram/@rezafauzanadhima" class="contact-link">@RezaFauzan1945</a>
-                            </li>
-                        </ul>
-
-                        <ul class="social-media-list">
-                            <li class="social-media-list-item">
-                                <a href="#" class="social-media-link">
-                                    <img src="assets/img/vendor/Facebook_logo.svg" alt="Facebook">
-                                </a>
-                            </li>
-                            <li class="social-media-list-item">
-                                <a href="#" class="social-media-link">
-                                    <img src="assets/img/vendor/Instagram_logo_2016.svg" alt="Instagram">
-                                </a>
-                            </li>
-                            <li class="social-media-list-item">
-                                <a href="#" class="social-media-link">
-                                    <img src="assets/img/vendor/Logo_of_Twitter.svg" alt="Twitter">
-                                </a>
-                            </li>
-                            <li class="social-media-list-item">
-                                <a href="#" class="social-media-link">
-                                    <img src="assets/img/vendor/linkedin_small_logo.svg" alt="LinkedIn">
-                                </a>
-                            </li>
-                        </ul>
-
+                            <ul class="social-media-list">
+                                <li class="social-media-list-item">
+                                    <a href="#" class="social-media-link">
+                                        <img src="assets/img/vendor/Facebook_logo.svg" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li class="social-media-list-item">
+                                    <a href="#" class="social-media-link">
+                                        <img src="assets/img/vendor/Instagram_logo_2016.svg" alt="Instagram">
+                                    </a>
+                                </li>
+                                <li class="social-media-list-item">
+                                    <a href="#" class="social-media-link">
+                                        <img src="assets/img/vendor/Logo_of_Twitter.svg" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li class="social-media-list-item">
+                                    <a href="#" class="social-media-link">
+                                        <img src="assets/img/vendor/linkedin_small_logo.svg" alt="LinkedIn">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
             </section>
 
         </main>
@@ -619,6 +487,28 @@ $hero_content = fetch($db, "SELECT * FROM hero", 2);
             </nav>
         </footer>
     </div>
+
+    <script>
+        frontend_services = [
+            <?php
+            foreach ($services as $service) {
+                if ($service->service_category_name === "Frontend") {
+                    echo "{ 'title': '$service->service_title', 'description': '$service->service_description', $service->service_image},\n\t";
+                }
+            }
+            ?>
+        ]
+
+        backend_services = [
+            <?php
+            foreach ($services as $service) {
+                if ($service->service_category_name === "Frontend") {
+                    echo "{ 'title': '$service->service_title', 'description': '$service->service_description', $service->service_image},\n\t";
+                }
+            }
+            ?>
+        ]
+    </script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/utility.js"></script>

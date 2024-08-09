@@ -34,7 +34,7 @@
   --cta-text-primary-400: var(--color-accent-400);
   --cta-text-primary-800: var(--color-accent-800);
   --body-background: var(--color-primary-200);
-  --body-dark-background: url("../img/drawable/fotor-ai1.jpg");
+  --body-dark-background: url("../img/drawable/infinity_background.jpg");
   --cta-background: var(--background-accent-200);
   --cta-hover-background: var(--background-accent-400);
   --cta-active-background: var(--background-accent-800);
@@ -196,6 +196,15 @@ select {
   background-color: var(--color-neutral-900);
 }
 
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
 .card {
   --card-background: black;
   --card-font-color: snow;
@@ -317,6 +326,31 @@ body.dark-theme .card .card-body .card-cta-button:hover {
 body.dark-theme .card .card-body .card-cta-button:active {
   background: var(--dark-card-cta-button-active-background-color);
   color: var(--dark-card-cta-button-active-font-color);
+}
+
+.modal {
+  padding: 1em;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  animation: fadeout 8s ease-out forwards;
+}
+
+.modal:hover {
+  animation-play-state: paused;
+}
+
+.modal.alert {
+  background: #DD144D;
 }
 
 .container {
@@ -669,8 +703,8 @@ main .section-nav {
   width: 8em;
   background: var(--background-primary-900);
   padding: 1em;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   position: fixed;
   top: 20%;
   right: -8em;
@@ -684,7 +718,6 @@ main .section-nav #section-nav-toggler {
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
   cursor: pointer;
-  content: "&ltghkgkgkjgkgkgkgk";
   position: absolute;
   top: 50%;
   left: -20px;
@@ -979,6 +1012,9 @@ main section#feature .section-body .feature-list .feature-list-item .card .card-
 main section#feature .section-body .feature-list .feature-list-item .card .card-body .card-cta-link:active {
   color: var(--text-link-400);
 }
+main section#service .container {
+  backdrop-filter: blur(40px);
+}
 main section#service .section-body .role {
   display: flex;
   flex-direction: row;
@@ -1009,6 +1045,13 @@ main section#service .section-body .role .card.as-backend p {
   position: absolute;
   top: 40%;
   text-align: center;
+}
+main section#service .section-body .role .card.as-frontend:hover,
+main section#service .section-body .role .card.as-backend:hover,
+main section#service .section-body .role .card.as-frontend.active,
+main section#service .section-body .role .card.as-backend.active {
+  border: 1px solid snow;
+  box-shadow: 1px 1px 1em 4px snow;
 }
 main section#service .section-body .service-container {
   padding: 1em;
@@ -1126,7 +1169,14 @@ main section#portfolio .section-body .portfolio-container .project-carousel .pro
   flex: 2;
 }
 main section#contact {
-  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+main section#contact .container {
+  backdrop-filter: blur(40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1136,14 +1186,14 @@ main section#contact {
 main section#contact .section-body {
   width: 100%;
 }
-main section#contact .section-body .container {
+main section#contact .section-body .contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2em;
 }
-main section#contact .section-body .container form {
+main section#contact .section-body .contact-container form {
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -1152,8 +1202,8 @@ main section#contact .section-body .container form {
   align-items: center;
   gap: 2em;
 }
-main section#contact .section-body .container form input,
-main section#contact .section-body .container form textarea {
+main section#contact .section-body .contact-container form input,
+main section#contact .section-body .contact-container form textarea {
   background: var(--background-primary-450);
   color: var(--text-primary-200);
   width: 100%;
@@ -1162,18 +1212,18 @@ main section#contact .section-body .container form textarea {
   border-radius: 6px;
   resize: none;
 }
-main section#contact .section-body .container form input::placeholder,
-main section#contact .section-body .container form textarea::placeholder {
+main section#contact .section-body .contact-container form input::placeholder,
+main section#contact .section-body .contact-container form textarea::placeholder {
   color: var(--text-primary-450);
 }
-main section#contact .section-body .container form input:focus-visible,
-main section#contact .section-body .container form textarea:focus-visible {
+main section#contact .section-body .contact-container form input:focus-visible,
+main section#contact .section-body .contact-container form textarea:focus-visible {
   outline: var(--color-neutral-200) auto 1px;
 }
-main section#contact .section-body .container form textarea {
+main section#contact .section-body .contact-container form textarea {
   min-height: 200px;
 }
-main section#contact .section-body .container form button {
+main section#contact .section-body .contact-container form button {
   background: var(--cta-background);
   color: var(--text-primary-900);
   padding: 1em 2em;
@@ -1184,19 +1234,19 @@ main section#contact .section-body .container form button {
   display: inline-block;
   cursor: pointer;
 }
-main section#contact .section-body .container form button:hover {
+main section#contact .section-body .contact-container form button:hover {
   background-color: var(--cta-hover-background);
 }
-main section#contact .section-body .container form button:active {
+main section#contact .section-body .contact-container form button:active {
   background-color: var(--cta-active-background);
 }
-main section#contact .section-body .container .contact-list {
+main section#contact .section-body .contact-container .contact-list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
 }
-main section#contact .section-body .container .contact-list .contact-list-item {
+main section#contact .section-body .contact-container .contact-list .contact-list-item {
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -1204,21 +1254,21 @@ main section#contact .section-body .container .contact-list .contact-list-item {
   align-items: center;
   gap: 1em;
 }
-main section#contact .section-body .container .contact-list .contact-list-item img {
+main section#contact .section-body .contact-container .contact-list .contact-list-item img {
   margin: 0 auto;
   width: 40px;
 }
-main section#contact .section-body .container .contact-list .contact-list-item .contact-link {
+main section#contact .section-body .contact-container .contact-list .contact-list-item .contact-link {
   color: var(--text-link-400);
   text-decoration: none;
 }
-main section#contact .section-body .container .contact-list .contact-list-item .contact-link:hover {
+main section#contact .section-body .contact-container .contact-list .contact-list-item .contact-link:hover {
   color: var(--text-link-800);
 }
-main section#contact .section-body .container .contact-list .contact-list-item .contact-link:active {
+main section#contact .section-body .contact-container .contact-list .contact-list-item .contact-link:active {
   color: var(--text-link-200);
 }
-main section#contact .section-body .container .social-media-list {
+main section#contact .section-body .contact-container .social-media-list {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1226,34 +1276,35 @@ main section#contact .section-body .container .social-media-list {
   align-items: center;
   gap: 1em;
 }
-main section#contact .section-body .container .social-media-list .social-media-list-item {
+main section#contact .section-body .contact-container .social-media-list .social-media-list-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
-main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link {
+main section#contact .section-body .contact-container .social-media-list .social-media-list-item .social-media-link {
   color: var(--text-link-400);
   text-decoration: none;
 }
-main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link img {
+main section#contact .section-body .contact-container .social-media-list .social-media-list-item .social-media-link img {
   width: 40px;
 }
-main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link:hover {
+main section#contact .section-body .contact-container .social-media-list .social-media-list-item .social-media-link:hover {
   color: var(--text-link-800);
 }
-main section#contact .section-body .container .social-media-list .social-media-list-item .social-media-link:hover {
+main section#contact .section-body .contact-container .social-media-list .social-media-list-item .social-media-link:hover {
   color: var(--text-link-200);
 }
-main section#product .container {
+
+main#product-pages section#product .container {
   background: rgba(40, 40, 40, 0.8);
   backdrop-filter: blur(40px);
 }
-main section#product .section-body {
+main#product-pages section#product .section-body {
   width: 100%;
 }
-main section#product .section-body .product-list {
+main#product-pages section#product .section-body .product-list {
   width: 100%;
   margin-bottom: 2em;
   display: grid;
@@ -1262,20 +1313,20 @@ main section#product .section-body .product-list {
   gap: 1em;
   list-style: none;
 }
-main section#product .section-body .product-list .product-list-item .card {
+main#product-pages section#product .section-body .product-list .product-list-item .card {
   background: rgba(0, 0, 64, 0.4);
   color: snow;
   box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
 }
-main section#product .section-body .product-list .product-list-item .card .card-header {
+main#product-pages section#product .section-body .product-list .product-list-item .card .card-header {
   background: blue;
   height: 160px;
 }
-main section#product .section-body .product-list .product-list-item .card .card-body {
+main#product-pages section#product .section-body .product-list .product-list-item .card .card-body {
   height: 80px;
   padding: 1em;
 }
-main section#product .section-body .product-pagination-list {
+main#product-pages section#product .section-body .product-pagination-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1283,27 +1334,28 @@ main section#product .section-body .product-pagination-list {
   gap: 1em;
   list-style: none;
 }
-main section#product .section-body .product-pagination-list .product-pagination-link {
+main#product-pages section#product .section-body .product-pagination-list .product-pagination-link {
   color: var(--text-link-white);
   text-decoration: none;
 }
-main section#product .section-body .product-pagination-list .product-pagination-link:hover {
+main#product-pages section#product .section-body .product-pagination-list .product-pagination-link:hover {
   color: var(--text-link-200);
 }
-main section#product .section-body .product-pagination-list .product-pagination-link:active {
+main#product-pages section#product .section-body .product-pagination-list .product-pagination-link:active {
   color: var(--text-link-800);
 }
-main section#product .section-body .product-pagination-list .product-pagination-link.active {
+main#product-pages section#product .section-body .product-pagination-list .product-pagination-link.active {
   color: var(--text-link-800);
 }
-main section#service .container {
+
+main#service-page section#service .container {
   background: rgba(40, 40, 40, 0.8);
   backdrop-filter: blur(40px);
 }
-main section#service .section-body {
+main#service-page section#service .section-body {
   width: 100%;
 }
-main section#service .section-body .service-list {
+main#service-page section#service .section-body .service-list {
   width: 100%;
   margin-bottom: 2em;
   display: grid;
@@ -1312,20 +1364,20 @@ main section#service .section-body .service-list {
   gap: 1em;
   list-style: none;
 }
-main section#service .section-body .service-list .service-list-item .card {
+main#service-page section#service .section-body .service-list .service-list-item .card {
   background: rgba(0, 0, 64, 0.4);
   color: snow;
   box-shadow: 4px 4px 4px 4px rgba(0, 150, 255, 0.4);
 }
-main section#service .section-body .service-list .service-list-item .card .card-header {
+main#service-page section#service .section-body .service-list .service-list-item .card .card-header {
   background: blue;
   height: 160px;
 }
-main section#service .section-body .service-list .service-list-item .card .card-body {
+main#service-page section#service .section-body .service-list .service-list-item .card .card-body {
   height: 80px;
   padding: 1em;
 }
-main section#service .section-body .service-pagination-list {
+main#service-page section#service .section-body .service-pagination-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1333,21 +1385,22 @@ main section#service .section-body .service-pagination-list {
   gap: 1em;
   list-style: none;
 }
-main section#service .section-body .service-pagination-list .service-pagination-link {
+main#service-page section#service .section-body .service-pagination-list .service-pagination-link {
   color: var(--text-link-white);
   text-decoration: none;
 }
-main section#service .section-body .service-pagination-list .service-pagination-link:hover {
+main#service-page section#service .section-body .service-pagination-list .service-pagination-link:hover {
   color: var(--text-link-200);
 }
-main section#service .section-body .service-pagination-list .service-pagination-link:active {
+main#service-page section#service .section-body .service-pagination-list .service-pagination-link:active {
   color: var(--text-link-800);
 }
-main section#service .section-body .service-pagination-list .service-pagination-link.active {
+main#service-page section#service .section-body .service-pagination-list .service-pagination-link.active {
   color: var(--text-link-800);
 }
 
 footer {
+  backdrop-filter: blur(40px);
   padding: 2em;
   border-top: 1px solid var(--background-primary-900);
 }
@@ -1477,7 +1530,7 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
   main section#contact .section-body {
     padding: 0;
   }
-  main section#contact .section-body .container .contact-list {
+  main section#contact .section-body .contact-container .contact-list {
     grid-template-columns: 1fr;
   }
   footer .footer-nav {
@@ -1550,8 +1603,8 @@ footer .footer-nav .nav-list .nav-list-item .nav-link:active {
     max-width: 1600px;
   }
   main .section-nav {
-    width: 16em;
-    right: -16em;
+    width: 16%;
+    right: -16%;
   }
 }
 body {

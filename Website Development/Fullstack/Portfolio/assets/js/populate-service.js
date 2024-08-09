@@ -66,6 +66,11 @@ const as_backend = document.getElementById('as-backend')
 
 as_frontend.addEventListener('click', () => {
 
+    if (!as_frontend.classList.contains('active')) {
+        as_frontend.classList.toggle('active')
+        as_backend.classList.remove('active')
+    }
+
     tech_stack_conatiner.innerHTML = ''
     service_list.innerHTML = ''
 
@@ -196,6 +201,11 @@ as_frontend.addEventListener('click', () => {
 )
 
 as_backend.addEventListener('click', () => {
+
+    if (!as_backend.classList.contains('active')) {
+        as_backend.classList.toggle('active')
+        as_frontend.classList.remove('active')
+    }
 
     tech_stack_conatiner.innerHTML = ''
     service_list.innerHTML = ''
