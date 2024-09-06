@@ -23,7 +23,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ data }) => {
                 <div className={styles.me}>
                     <h3>{about_headline}</h3>
 
-                    {about_content}
+                    <div dangerouslySetInnerHTML={{__html: about_content}}>
+
+                    </div>
 
                     <div className={styles.cta}>
                         <p>More about me on my <Link href="/resume" className={styles.cta_link}>resume here &gt;</Link></p>

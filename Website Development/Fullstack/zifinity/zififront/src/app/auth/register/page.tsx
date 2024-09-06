@@ -9,6 +9,7 @@ export default function Home() {
     const RegisterForm: React.FC = () => {
         return (
             <form className={styles.register_form} action="" method="post">
+                <h1>{"This page still on progress"}</h1>
                 <h2 className={styles.form_heading}>Wellcome</h2>
                 <p className={styles.form_heading}>Please enter your details</p>
 

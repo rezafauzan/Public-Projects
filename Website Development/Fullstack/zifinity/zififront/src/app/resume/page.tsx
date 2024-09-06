@@ -7,6 +7,7 @@ export default function Home() {
     <PageWrapper>
       <Main>
         <RezaFauzanAdhimaResume />
+        {"This page still on progress"}
       </Main>
     </PageWrapper>
   )

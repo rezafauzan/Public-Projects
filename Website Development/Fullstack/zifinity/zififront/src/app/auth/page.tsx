@@ -9,6 +9,7 @@ export default function Home() {
   const LoginForm: React.FC = () => {
     return (
       <form className={styles.login_form} action="" method="post">
+        <h1>{"This page still on progress"}</h1>
         <h2 className={styles.form_heading}>Wellcome Back</h2>
         <p className={styles.form_heading}>Please enter your details</p>
 
