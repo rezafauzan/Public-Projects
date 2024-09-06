@@ -1,8 +1,49 @@
-import Image from "next/image"
+import PageWrapper from "@/components/pageWrapper"
+import Header from "@/components/header"
+import Main from "@/components/main"
+import Footer from "@/components/footer"
 import HeroSection from "@/components/heroSection"
+import AboutSection from "@/components/aboutSection"
+import FeatureSection from "@/components/featureSection"
+import ContactSection from "@/components/contactSection"
+import Loading from "@/components/loading"
 
-export default function Home() {
+async function fetchData(url: string) {
+  try {
+      const response = await fetch(url)
+      const data = await response.json()
+      return data.contents
+  } catch (error) {
+      console.error('fetch data fail! ' + error)
+      return null
+  }
+  finally {
+      console.log('fetch data finish!')
+  }
+}
+
+export default async function Home() {
+  const landingPageContent = await fetchData('http://zifinity-backend-laravel.test/api/landing-page-contents')
+  const data = {
+      'heroContents': landingPageContent.hero_contents,
+      'aboutContents': landingPageContent.about_contents,
+      'featureContents': landingPageContent.feature_contents
+  }
+
+  if(!data){
+    return <Loading />
+  }
+  
   return (
-    <HeroSection />
+    <PageWrapper>
+      <Header />
+      <Main>
+        <HeroSection data={data.heroContents} />
+        <AboutSection data={data.aboutContents} />
+        <FeatureSection data={data.featureContents} />
+        <ContactSection />
+      </Main>
+      <Footer />
+    </PageWrapper>
   )
 }

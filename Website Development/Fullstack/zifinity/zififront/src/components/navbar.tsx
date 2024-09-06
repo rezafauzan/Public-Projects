@@ -1,40 +1,52 @@
 'use client'
+import styles from "./style/navbar.module.css"
 import { useState } from "react"
+import Link from "next/link"
 
 const Navbar: React.FC = () => {
     const [navbarState, setNavbarState] = useState(false)
 
     const NavbarToggler: React.FC = () => {
-        function toggleNavbar(){
-            setNavbarState( navbarState=> !navbarState )
+        function toggleNavbar() {
+            setNavbarState(navbarState => !navbarState)
         }
 
         return (
-            <div className="navbar-toggler" onClick={toggleNavbar}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button className={styles.navbar_toggler + " " + (navbarState ? styles.navbar_toggler_show : '')} aria-label="Navbar Toggler" onClick={toggleNavbar}>
+                <span className={styles.navbar_toggler_span}></span>
+                <span className={styles.navbar_toggler_span}></span>
+                <span className={styles.navbar_toggler_span}></span>
+            </button>
         )
     }
 
     return (
-        <nav>
-            <div className="brand">
-                <a href="#" className="brand-link">Zigzag's Infinity Team ∞</a>
+        <nav className={styles.navbar}>
+            <div className={styles.brand}>
+                <a href="#" className={styles.brand_link}>Zifinity ∞</a>
             </div>
 
-            <ul role="list" className={"nav-list " + (navbarState ? 'show' : '')}>
-                <li className="nav-list-item"><a href="#" className="nav-link active">Product</a></li>
-                <li className="nav-list-item"><a href="#" className="nav-link">Portfolio</a></li>
-                <li className="nav-list-item"><a href="#" className="nav-link">Services</a></li>
-                <li className="nav-list-item"><a href="#" className="nav-link">About</a></li>
-                <li className="nav-list-item"><a href="#" className="nav-link">Contact</a></li>
+            <ul role="list" className={( styles.nav_list + " " + (navbarState ? styles.nav_list_show : '') )}>
+                <li className={styles.nav_list_item}>
+                    <a href="#" className={styles.nav_link}>Product</a>
+                </li>
+                <li className={styles.nav_list_item}>
+                    <a href="#" className={styles.nav_link}>Portfolio</a>
+                </li>
+                <li className={styles.nav_list_item}>
+                    <a href="#" className={styles.nav_link}>Services</a>
+                </li>
+                <li className={styles.nav_list_item}>
+                    <a href="#" className={styles.nav_link}>About</a>
+                </li>
+                <li className={styles.nav_list_item}>
+                    <a href="#" className={styles.nav_link}>Contact</a>
+                </li>
             </ul>
 
-            <div className="cta">
-                <a href="#" className="cta-button">Call To Action</a>
-            </div>
+            <div className={styles.cta}>
+                <Link href="/auth" className={styles.cta_button}>Member Login!</Link>
+            </div >
 
             <NavbarToggler />
 

@@ -1,4 +1,5 @@
 'use client'
+import styles from "./style/themeToggler.module.css"
 import { useState } from "react"
 
 const ThemeToggler: React.FC = () => {
@@ -9,8 +10,8 @@ const ThemeToggler: React.FC = () => {
     }
 
     return (
-        <div className="theme-toggler">
-            <input type="range" value={(themeState === 'dark' ? 1 : 0)} max={1} onClick={toggleTheme} className={"theme-slider " + (themeState === 'dark' ? 'dark' : '')}/>
+        <div className={styles.theme_toggler}>
+            <button onClick={toggleTheme} className={styles.theme_toggler_button} aria-label="Theme Toggler">{(themeState === 'dark' ?'🌙':'☀')}</button>
         </div>
     )
 }

@@ -64,6 +64,14 @@ To Do:
 18/08/2024
 -Add lazy loading to all <img>@LandingPage.blade.php (Done)
 
+19/08/2024
+-Create `Zififront` NextJS Project (Done)
+-Create Main NextJS Layout (Done)
+-Convert UI to NextJS Components (On Progress)
+
+27/08/2024
+-Pemotretan set professional latar hitam pakaian hitam kasual professional
+
 *Create Pages:
 -About
 -Resume

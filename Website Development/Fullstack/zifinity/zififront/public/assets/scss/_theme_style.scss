@@ -331,8 +331,8 @@ body.dark-theme {
     background: var(--body-dark-background);
     background-size: cover;
     background-repeat: no-repeat;
-    // backdrop-filter: blur(1.85em); // This property cause the child position fixed not work
     color: var(--text-primary-200);
+    // backdrop-filter: blur(1.85em); // This property cause the child position fixed not work
 
     header {
 

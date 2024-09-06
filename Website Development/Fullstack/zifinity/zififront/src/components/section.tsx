@@ -1,16 +1,21 @@
+import styles from "./style/section.module.css"
+
 type sectionProps = {
     id: string,
-    headContent: string,
-    bodyContent: string
+    sectionStyleClass: string,
+    containerStyleClass: string,
+    sectionHeadStyleClass: string,
+    sectionBodyStyleClass: string,
+    headContent: string | React.ReactNode | null,
+    bodyContent: string | React.ReactNode | null
 }
 
-const Section: React.FC<sectionProps> = ({id, headContent='', bodyContent=''}) => {
-
-    return(
-        <section id={id}>
-            <div className="container">
-                <div className="section-head">{headContent}</div>
-                <div className="section-body">{bodyContent}</div>
+const Section: React.FC<sectionProps> = ({ id, sectionStyleClass, containerStyleClass, sectionHeadStyleClass, sectionBodyStyleClass, headContent = 'headContent', bodyContent = 'bodyContent' }) => {
+    return (
+        <section className={styles.section + (sectionStyleClass ? " " + sectionStyleClass : '')} id={id}>
+            <div className={styles.container + (containerStyleClass ? " " + containerStyleClass : '')}>
+                {(id === 'hero' ? '' : <div className={styles.section_head + (sectionHeadStyleClass ? " " + sectionHeadStyleClass : '')}>{headContent}</div>)}
+                <div className={styles.section_body + (sectionBodyStyleClass ? " " + sectionBodyStyleClass : '')}>{bodyContent}</div>
             </div>
         </section>
     )
