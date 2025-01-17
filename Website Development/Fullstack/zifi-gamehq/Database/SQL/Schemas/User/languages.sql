@@ -1,0 +1,7 @@
+-- id
+-- language_name
+
+CREATE TABLE IF NOT EXISTS languages (
+    id SMALLINT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    language_name VARCHAR(255) NOT NULL
+);

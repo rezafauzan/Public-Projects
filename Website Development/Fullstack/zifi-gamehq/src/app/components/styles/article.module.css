@@ -1,0 +1,98 @@
+.article_container {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    column-gap: 40px;
+    grid-template-areas:
+        "hero hero"
+        "article article"
+        "aside aside"
+        ;
+}
+
+.article_hero {
+    grid-area: hero;
+}
+
+.article {
+    grid-area: article;
+
+    p {
+        text-align: justify;
+    }
+
+    .article_mention_hyperlink {
+        color: snow;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid #d8d8d8;
+        border-radius: 5px;
+        box-shadow: 0 0 15px 1px rgba(1, 150, 220, 0.4);
+        background-color: #0a1f4a;
+
+        a {
+            color: #019dfa;
+        }
+    }
+
+    .article_ads_banner {
+        width: 100%;
+        height: auto;
+        margin: 4rem 0;
+        text-align: center;
+
+        .ads_banner_image {
+            width: 100%;
+        }
+    }
+
+    .author_box {
+        border-radius: 5px;
+        box-shadow: 0 0 15px 1px rgba(1, 150, 220, 0.4);
+        background-color: #0a1f4a;
+    }
+
+    .related_post {
+        border-radius: 5px;
+        box-shadow: 0 0 15px 1px rgba(1, 150, 220, 0.4);
+        background-color: #0a1f4a;
+
+        nav {
+            ul {
+                li {
+                    h4 {
+                        p {
+                            margin: 1rem 0;
+                            font-size: larger;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.article_aside {
+    grid-area: aside;
+
+    /* .aside-social-media .social-media-list .social-media-list-item .social-media-link .social-media-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        line-height: 40px;
+        text-align: center;
+        display: flex;
+        border-radius: 50%;
+    } */
+}
+
+@media (width >= 768px){
+    .article_container {
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        column-gap: 40px;
+        grid-template-areas:
+            "hero hero"
+            "article aside";
+    }
+}
