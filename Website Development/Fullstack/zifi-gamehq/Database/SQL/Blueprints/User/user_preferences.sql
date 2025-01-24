@@ -3,8 +3,10 @@
 -- language
 -- ui_theme
 
-CREATE TABLE IF NOT EXISTS users_preference (
-    id INT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
+CREATE SCHEMA IF NOT EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users.users_preference (
+    id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
     language_id SMALLINT NOT NULL DEFAULT 1,
     ui_theme VARCHAR(255) NOT NULL DEFAULT 'system',

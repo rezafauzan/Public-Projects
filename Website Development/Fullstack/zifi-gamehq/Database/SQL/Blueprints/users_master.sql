@@ -1,14 +1,4 @@
 -- id
--- country_name
--- country_code
-
-CREATE TABLE IF NOT EXISTS countries (
-    id SMALLINT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
-    country_name VARCHAR(70) NOT NULL,
-    country_code VARCHAR(15) NOT NULL UNIQUE,
-    phone_country_code VARCHAR(15) NOT NULL
-);
--- id
 -- language_name
 
 CREATE TABLE IF NOT EXISTS languages (
@@ -53,10 +43,8 @@ CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255)  NOT NULL,
-    country_id SMALLINT NOT NULL,
     username VARCHAR(255) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(40) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     profile_picture_url VARCHAR(255),
     role_id SMALLINT NOT NULL,
